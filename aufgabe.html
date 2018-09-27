@@ -1,0 +1,72 @@
+<html>
+<head>
+    <style>
+table {
+    width:50%;
+}
+table, th, td {
+    border: 5px solid black;
+    border-collapse: collapse;
+    color: rgb(0, 26, 255);
+    font-size: 20px
+}
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+table#t01 tr:nth-child(even) {
+    background-color:rgb(8, 248, 0) ;
+}
+table#t01 tr:nth-child(odd) {
+   background-color: rgb(0, 206, 0);
+}
+table#t01 th {background-color:rgb(8, 248, 0) ;
+    color:blue;}
+h1{font-family: cursive}
+</style>
+</head>
+<body>
+
+<h1>Tagesbericht</h1>
+<p>Mein zweiter Tagesbericht</p>
+<p id="demo">...</p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Di.25.10.18 , an der alten Ziegelei 2, EPLAN"'>mehr!</button>
+<table id="t01">  
+<tr>
+    <th>Zeitablauf</th>
+    <th>Ort der Tätigkeit</th>
+    <th>Bericht</th>
+</tr>    
+<tr>
+    <td>Di.25.10.2018</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>08:45-12:30</td>
+    <td>Büro</td>
+    <td>Weiter Arebit lernen</td>
+</tr>
+<tr>
+    <td>12:30-13:30</td>
+    <td>Pausenkantene</td>
+    <td>Pause-Mittagsessen</td>   
+</tr>
+<tr>
+    <td>13:30-14:30</td>
+    <td>Büro</td>
+    <td>Eine Präsentation anhören</td>
+</tr>
+<tr>
+    <td>14:40-15:00</td>
+    <td>Sekretariat</td>
+    <td>Nach der Schulbescheinung fragen</td>
+</tr>
+<tr>
+    <td>15:00-16:45</td>
+    <td>Büro</td>
+    <td>Tagesbericht erstellen & Weiter lernen</td>
+</tr>
+</body>
+</html>
