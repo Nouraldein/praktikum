@@ -1,12 +1,34 @@
 <html>
 <head>
+    <script>
+        function insertMyText() {
+            document.getElementById("tabelleZelle1").innerHTML = "Di.25.10.18 ";
+            document.getElementById("Time1").innerHTML = "08:45 - 12:30";
+            document.getElementById("Time2").innerHTML ="12:30-13:30";
+            document.getElementById("Time3").innerHTML ="13:30-14:30";
+            document.getElementById("Time4").innerHTML ="14:40-15:00";
+            document.getElementById("Time5").innerHTML ="15:00-16:45";}
+        function myFuncation() {
+            document.getElementById("PLace1").innerHTML ="Büro";
+            document.getElementById("Place2").innerHTML ="Pausen Kantine";
+            document.getElementById("Place3").innerHTML ="Büro";
+            document.getElementById("Place4").innerHTML ="Sekretariat";
+            document.getElementById("Place5").innerHTML ="Büro";}
+        function myBericht() {
+            document.getElementById("report1").innerHTML ="Weiter Arebit lernen";
+            document.getElementById("report2").innerHTML ="Pause-Mittagsessen";
+            document.getElementById("report3").innerHTML ="Eine Präsentation anschauen";
+            document.getElementById("report4").innerHTML ="Nach der Schulbescheinung fragen";
+            document.getElementById("report5").innerHTML ="Tagesbericht erstellen & Weiter lernen";} 
+    </script>
     <style>
+div{background-image: linear-gradient(rgb(0, 255, 76), rgb(0, 80, 0),rgb(0, 255, 21),rgb(0, 92, 0));}
 table {
     width:50%; 
 }
 table, th, td {
     border: 5px solid black;
-    border-radius: 25px;
+    border-bottom-left-radius: 50px;
     border-collapse: collapse;
     color: rgb(0, 26, 255);
     font-size: 20px
@@ -17,57 +39,87 @@ th, td {
 }
 table#t01 tr:nth-child(even) {
     background-color:rgb(8, 248, 0) ;
+    opacity: 2;
 }
 table#t01 tr:nth-child(odd) {
    background-color: rgb(0, 206, 0);
 }
 table#t01 th {background-color:rgb(8, 248, 0) ;
+opacity: 0.9;
     color:blue;}
-.center {text-align: center}
-h1{font-family: cursive}
+h1{font-family: cursive;color: blue}
+p{font-family: cursive;color: blue}
+a {background-color: chartreuse;color:blue;font-size: 30px}
 </style>
 </head>
 <body>
+<div style="height:1050px">
+    <div id="div1">
 <h1>Tagesbericht</h1>
 <p>Mein zweiter Tagesbericht</p>
-<p id="demo">...</p>
+<p>bxwguw</p>
+<p id="p1"><button onclick="my2Function()">Click Me!</button></p>
+</div>
+<script>
+    function my2Function() {
+        var parent = document.getElementById("div7");
+    
+        var para = document.createElement("p");
+        var node =document.createTextNode("hhh");
+        para.appendChild(node);
+        parent.appendChild(para); 
+        }
+       </script>
 
-<button type="button" onclick='document.getElementById("demo").innerHTML = "Di.25.10.18 , an der alten Ziegelei 2, EPLAN"'>mehr!</button>
-<table id="t01">  
+<div id="div7"></div>
+
+<table id="t01">
+
 <tr>
-    <th>Zeitablauf</th>
-    <th>Ort der Tätigkeit</th>
-    <th>Bericht</th>
+    <th><button type="button" onclick='insertMyText()'><a target="_blank"> Zeitablauf</a></button></th>
+    <th><button type="button" onclick='myFuncation()'><a target="_blank">Ort der Tätigkeit</a></button></th>
+    <th><button type="button" onclick='myBericht()'><a target="_blank">Bericht</a></button></th>
 </tr>    
+<tr id="div2">
+    <td id="tabelleZelle1">...</td>
+    <td id="td1"><button onclick="my1Funcation()">Click Me!</button></td>
+    <td>...</td></div>
+</tr>
+<script>
+    function my1Funcation() {
+        var parent = document.getElementById("t01");
+
+        var para1 = document.createElement("tr");
+        var para = document.createElement("td");
+        var node = document.createTextNode("EPLAN, an der alten Ziegelei");
+        para.appendChild(node);
+        para1.appendChild(para);
+        parent.appendChild(para1); } 
+</script>
 <tr>
-    <td>Di.25.10.18</td>
-    <td></td>
-    <td></td>
+    <td id="Time1">...</td>
+    <td id="PLace1">...</td>
+    <td id="report1">...</td>
 </tr>
 <tr>
-    <td>08:45-12:30</td>
-    <td>Büro</td>
-    <td>Weiter Arebit lernen</td>
+    <td id="Time2">...</td>
+    <td id="Place2">...</td>
+    <td id="report2">...</td>   
 </tr>
 <tr>
-    <td>12:30-13:30</td>
-    <td>Pausenkantene</td>
-    <td>Pause-Mittagsessen</td>   
+    <td id="Time3">...</td>
+    <td id="Place3">...</td>
+    <td id="report3">...</td>
 </tr>
 <tr>
-    <td>13:30-14:30</td>
-    <td>Büro</td>
-    <td>Eine Präsentation anhören</td>
+    <td id="Time4">...</td>
+    <td id="Place4">...</td>
+    <td id="report4" >...</td>
 </tr>
 <tr>
-    <td>14:40-15:00</td>
-    <td>Sekretariat</td>
-    <td>Nach der Schulbescheinung fragen</td>
-</tr>
-<tr>
-    <td>15:00-16:45</td>
-    <td>Büro</td>
-    <td>Tagesbericht erstellen & Weiter lernen</td>
+    <td id="Time5">...</td>
+    <td id="Place5">...</td>
+    <td id="report5">...</td>
 </tr>
 </body>
 </html>
