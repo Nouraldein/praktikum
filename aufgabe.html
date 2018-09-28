@@ -57,18 +57,24 @@ a {background-color: chartreuse;color:blue;font-size: 30px}
     <div id="div1">
 <h1>Tagesbericht</h1>
 <p>Mein zweiter Tagesbericht</p>
-<p>bxwguw</p>
+
 <p id="p1"><button onclick="my2Function()">Click Me!</button></p>
 </div>
 <script>
     function my2Function() {
         var parent = document.getElementById("div7");
-    
         var para = document.createElement("p");
-        var node =document.createTextNode("hhh");
+        var node =document.createTextNode(new Date());
+        var d = document.createElement("tr")
         para.appendChild(node);
         parent.appendChild(para); 
         }
+       </script>
+       <script>
+           function myNewTime() {
+           var d = new Date()
+               document.getElementById("GMT").innerHTML = d;
+               
        </script>
 
 <div id="div7"></div>
@@ -88,7 +94,6 @@ a {background-color: chartreuse;color:blue;font-size: 30px}
 <script>
     function my1Funcation() {
         var parent = document.getElementById("t01");
-
         var para1 = document.createElement("tr");
         var para = document.createElement("td");
         var node = document.createTextNode("EPLAN, an der alten Ziegelei");
