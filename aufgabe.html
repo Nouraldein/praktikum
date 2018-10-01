@@ -53,32 +53,44 @@ a {background-color: chartreuse;color:blue;font-size: 30px}
 </style>
 </head>
 <body>
-<div style="height:1050px">
+<div style="height:1600px">
     <div id="div1">
-<h1>Tagesbericht</h1>
-<p>Mein zweiter Tagesbericht</p>
-
-<p id="p1"><button onclick="my2Function()">Click Me!</button></p>
-</div>
-<script>
-    function my2Function() {
-        var parent = document.getElementById("div7");
-        var para = document.createElement("p");
-        var node =document.createTextNode(new Date());
-        var d = document.createElement("tr")
-        para.appendChild(node);
-        parent.appendChild(para); 
-        }
-       </script>
+<h1>Tagenberichte</h1>
+<p>Die Praktikumswochen</p>
+<p id="momo"><button onclick="add21daysNumber()">Click!</button></p>
+<p id="t01"><button onclick="add5Rows()">Add Row!</button></p>
+    </div>
 <div id="div7"></div>
         <script>
-            function my3Function() {
-                var parent=document.getElementById("divv");
-                var para=document.createElement("tr");
-                var node=document.createTextNode(new Date());
-                var d =document.createElement("td");
-                para.appendChild(node);
-                parent.appendChild(para);
+            function add21daysNumber() {
+                var text=""
+                var i=1;
+                while (i<22){text +="<br>Day number"+i;;i++;}
+                document.getElementById("momo").innerHTML= text;}
+        </script>
+        <script>
+
+            function add5Rows()
+            {
+                var Row="";
+                var i=t01;
+                while ({Row +="<br>"+i;i++})
+
+            }
+
+            function add5Rows() {
+                var parent = document.getElementById("t01");
+                var tr = document.createElement("tr");
+                var td;
+                td = document.createElement("td"); tr.appendChild(td);
+                var node = document.createTextNode(new Date()); td.appendChild(node);
+                // Zwei weitere Zellen
+                td = document.createElement("td"); tr.appendChild(td);
+                var node = document.createTextNode("Monheim Am Rhein"); td.appendChild(node);
+                td = document.createElement("td"); tr.appendChild(td);
+                var node = document.createTextNode("EPLAN Tagesbericht"); td.appendChild(node);
+
+                parent.appendChild(tr);
 
             }
         </script>
@@ -90,10 +102,10 @@ a {background-color: chartreuse;color:blue;font-size: 30px}
     <th><button type="button" onclick='myFuncation()'><a target="_blank">Ort der Tätigkeit</a></button></th>
     <th><button type="button" onclick='myBericht()'><a target="_blank">Bericht</a></button></th>
 </tr>    
-<tr id="divv">
+<tr>
     <td id="tabelleZelle1">...</td>
     <td id="td1"><button onclick="my1Funcation()">Click Me!</button></td>
-    <td><button onclick='my3Function()'>...</button></td></div>
+    <td>...</td>
 </tr>
 <script>
     function my1Funcation() {
