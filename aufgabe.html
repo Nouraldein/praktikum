@@ -58,27 +58,31 @@ a {background-color: chartreuse;color:blue;font-size: 30px}
 <h1>Tagenberichte</h1>
 <p>Die Praktikumswochen</p>
 <p id="momo"><button onclick="add21daysNumber()">Click!</button></p>
-<p id="t01"><button onclick="add5Rows()">Add Row!</button></p>
+<p id="demo2"><button onclick="add5Rows()">Add Row!</button></p>
     </div>
 <div id="div7"></div>
         <script>
             function add21daysNumber() {
                 var text=""
                 var i=1;
-                while (i<22){text +="<br>Day number"+i;;i++;}
+                while (i<22){text +="<br>Day number"+i;i++;}
                 document.getElementById("momo").innerHTML= text;}
         </script>
         <script>
 
             function add5Rows()
             {
-                var Row="";
-                var i=t01;
-                while ({Row +="<br>"+i;i++})
-
+             
+               var i= 0;
+               
+            
+               while (i<100) {
+                   addRow();
+                   i=i+5;
+                }
             }
 
-            function add5Rows() {
+            function addRow() {
                 var parent = document.getElementById("t01");
                 var tr = document.createElement("tr");
                 var td;
