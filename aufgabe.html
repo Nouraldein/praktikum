@@ -70,14 +70,18 @@ a {background-color: chartreuse;color:blue;font-size: 30px}
         parent.appendChild(para); 
         }
        </script>
-       <script>
-           function myNewTime() {
-           var d = new Date()
-               document.getElementById("GMT").innerHTML = d;
-               
-       </script>
-
 <div id="div7"></div>
+        <script>
+            function my3Function() {
+                var parent=document.getElementById("divv");
+                var para=document.createElement("tr");
+                var node=document.createTextNode(new Date());
+                var d =document.createElement("td");
+                para.appendChild(node);
+                parent.appendChild(para);
+
+            }
+        </script>
 
 <table id="t01">
 
@@ -86,10 +90,10 @@ a {background-color: chartreuse;color:blue;font-size: 30px}
     <th><button type="button" onclick='myFuncation()'><a target="_blank">Ort der Tätigkeit</a></button></th>
     <th><button type="button" onclick='myBericht()'><a target="_blank">Bericht</a></button></th>
 </tr>    
-<tr id="div2">
+<tr id="divv">
     <td id="tabelleZelle1">...</td>
     <td id="td1"><button onclick="my1Funcation()">Click Me!</button></td>
-    <td>...</td></div>
+    <td><button onclick='my3Function()'>...</button></td></div>
 </tr>
 <script>
     function my1Funcation() {
