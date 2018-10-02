@@ -1,0 +1,150 @@
+<html>
+<head>
+    <script>
+        function insertMyText() {
+            document.getElementById("tabelleZelle1").innerHTML = "Di.25.10.18 ";
+            document.getElementById("Time1").innerHTML = "08:45 - 12:30";
+            document.getElementById("Time2").innerHTML ="12:30-13:30";
+            document.getElementById("Time3").innerHTML ="13:30-14:30";
+            document.getElementById("Time4").innerHTML ="14:40-15:00";
+            document.getElementById("Time5").innerHTML ="15:00-16:45";}
+        function myFuncation() {
+            document.getElementById("PLace1").innerHTML ="Büro";
+            document.getElementById("Place2").innerHTML ="Pausen Kantine";
+            document.getElementById("Place3").innerHTML ="Büro";
+            document.getElementById("Place4").innerHTML ="Sekretariat";
+            document.getElementById("Place5").innerHTML ="Büro";}
+        function myBericht() {
+            document.getElementById("report1").innerHTML ="Weiter Arebit lernen";
+            document.getElementById("report2").innerHTML ="Pause-Mittagsessen";
+            document.getElementById("report3").innerHTML ="Eine Präsentation anschauen";
+            document.getElementById("report4").innerHTML ="Nach der Schulbescheinung fragen";
+            document.getElementById("report5").innerHTML ="Tagesbericht erstellen & Weiter lernen";} 
+    </script>
+    <style>
+div{background-image: linear-gradient(rgb(0, 255, 76), rgb(0, 80, 0),rgb(0, 255, 21),rgb(0, 92, 0));}
+table {
+    width:50%; 
+}
+table, th, td {
+    border: 5px solid black;
+    border-bottom-left-radius: 50px;
+    border-collapse: collapse;
+    color: rgb(0, 26, 255);
+    font-size: 20px
+}
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+table#t01 tr:nth-child(even) {
+    background-color:rgb(8, 248, 0) ;
+    opacity: 2;
+}
+table#t01 tr:nth-child(odd) {
+   background-color: rgb(0, 206, 0);
+}
+table#t01 th {background-color:rgb(8, 248, 0) ;
+opacity: 0.9;
+    color:blue;}
+h1{font-family: cursive;color: blue}
+p{font-family: cursive;color: blue}
+a {background-color: chartreuse;color:blue;font-size: 30px}
+</style>
+</head>
+<body>
+<div style="height:1600px">
+    <div id="div1">
+<h1>Tagenberichte</h1>
+<p>Die Praktikumswochen</p>
+<p id="momo"><button onclick="add21daysNumber()">Click!</button></p>
+<p id="demo2"><button onclick="add5Rows()">Add Row!</button></p>
+    </div>
+<div id="div7"></div>
+        <script>
+            function add21daysNumber() {
+                var text=""
+                var i=1;
+                while (i<22){text +="<br>Day number"+i;i++;}
+                document.getElementById("momo").innerHTML= text;}
+        </script>
+        <script>
+
+            function add5Rows()
+            {
+             
+               var i= 0;
+               
+            
+               while (i<5) {
+                   addRow();
+                   i=i++;
+                }
+            }
+
+            function addRow() {
+                var parent = document.getElementById("t01");
+                var tr = document.createElement("tr");
+                var td;
+                td = document.createElement("td"); tr.appendChild(td);
+                var node = document.createTextNode(new Date()); td.appendChild(node);
+                // Zwei weitere Zellen
+                td = document.createElement("td"); tr.appendChild(td);
+                var node = document.createTextNode("Monheim Am Rhein"); td.appendChild(node);
+                td = document.createElement("td"); tr.appendChild(td);
+                var node = document.createTextNode("EPLAN Tagesbericht"); td.appendChild(node);
+
+                parent.appendChild(tr);
+
+            }
+        </script>
+
+<table id="t01">
+
+<tr>
+    <th><button type="button" onclick='insertMyText()'><a target="_blank"> Zeitablauf</a></button></th>
+    <th><button type="button" onclick='myFuncation()'><a target="_blank">Ort der Tätigkeit</a></button></th>
+    <th><button type="button" onclick='myBericht()'><a target="_blank">Bericht</a></button></th>
+</tr>    
+<tr>
+    <td id="tabelleZelle1">...</td>
+    <td id="td1"><button onclick="my1Funcation()">Click Me!</button></td>
+    <td>...</td>
+</tr>
+<script>
+    function my1Funcation() {
+        var parent = document.getElementById("t01");
+        var para1 = document.createElement("tr");
+        var para = document.createElement("td");
+        var node = document.createTextNode("EPLAN, an der alten Ziegelei");
+        para.appendChild(node);
+        para1.appendChild(para);
+        parent.appendChild(para1); } 
+</script>
+<tr>
+    <td id="Time1">...</td>
+    <td id="PLace1">...</td>
+    <td id="report1">...</td>
+</tr>
+<tr>
+    <td id="Time2">...</td>
+    <td id="Place2">...</td>
+    <td id="report2">...</td>   
+</tr>
+<tr>
+    <td id="Time3">...</td>
+    <td id="Place3">...</td>
+    <td id="report3">...</td>
+</tr>
+<tr>
+    <td id="Time4">...</td>
+    <td id="Place4">...</td>
+    <td id="report4" >...</td>
+</tr>
+<tr>
+    <td id="Time5">...</td>
+    <td id="Place5">...</td>
+    <td id="report5">...</td>
+</tr>
+</body>
+</html>
