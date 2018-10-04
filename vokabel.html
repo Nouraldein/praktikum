@@ -2,48 +2,88 @@
 <html>
 <head>
     <script>
-        function myFunction() {
-            document.getElementById(Tabelle)
+        function aufgabe() {
+            var x =document.getElementById("demo").value;
+                   document.getElementById("demo").innerHTML = x;
+        }
+    </script>
+    <script>
+        function myFrage () {
+            var x=document.getElementById("momo").value="rare";
+                  document.getElementById("momo").innerHTML = x;
+            var y=document.getElementById("$").value="camp";
+                  document.getElementById("$").innerHTML=y;
+            var z=document.getElementById("§").value="shock wave";
+                  document.getElementById("§").innerHTML= z;
+            var node=document.getElementById("&").value="lie";
+                  document.getElementById("&").innerHTML= c;
+            var c=document.getElementById("nemo").value="bug";
+                  document.getElementById("nemo").innerHTML= demo;                     
         }
     </script>
     <style>
         div {
-            background-image: url(england.JPEG);
+            background-image  : linear-gradient(yellow,black);
             width: 100%;height: 20%;
-            border: 2px solid black;
+            border            : 2px solid black;
+            color             : black
         }
 
         .nav {
-            width: 100px;
+            width   : 100px   ;
             position: absolute;
-            left: 000px;
-            top: 100px;
-            
+            left    : 10px    ;
+            top     : 100px   ;
+            color   : blue  ;
+            height  :100% 
 
         }
 
          .aufgaben {
-            width: 70%;
-            position: absolute;
-            left: 100px;
-            top: 100px;
-            
-
+            width   : 92%         ;
+            position: absolute    ;
+            left    : 110px       ;
+            top     : 100px       ;
+            color   : blue      ;
+            height  :100% 
+        }
+        .header {
+            text-align: center;
+            color     : blue;        
+        }
+        li{
+            width           : 200px   ;
+            padding         :10px;         
+        }
+        h1 {
+            text-align: center;
+            font-size: 35px
+        }
+        h2 {
+            font-size: 35px
         }
     </style>
 </head>
 <body>
-    <div class="header"><h1><a href="javascript:reset()"><img width=30px; height=30px; src="home.png"></a>...Englisch-Vokabeln-Übungen...</h1></div>
-
-    <div class="nav"><ul><li>K1</li>
-    <li>K2</li>
-    <li>K3</li>
+    <div class="header"><h1><a href="javascript:reset()"><img width=30px; height=30px; src="home2.png"></a>...Englisch-Vokabeln-Übungen...</h1></div>
+    <div class="nav"><ul><li><strong>K-1</strong></li>
     </ul></div>
-
-
-    <div class="aufgaben"><ul><li>Aufgabe 1</li>
-        <li>Aufgabe 2
-        </li>
-        <li>Aufgabe 3</li>
-        </ul></div>
+    <div class="aufgaben">
+        <h1>Vokabeln-Trainer</h1>
+        <h2>Englisch</h2>
+        <ul>
+            <li><button type="button" onclick="aufgabe()"><input type="text" id="demo"> Aufgabe 1</button></li>
+            <li><button type="button" onclick="aufgabe()"><input type="text" id="demo"> Aufgabe 2</button></li>
+            <li><button type="button" onclick="aufgabe()"><input type="text" id="demo"> Aufgabe 3</button></li>
+            <li><button type="button" onclick="aufgabe()"><input type="text" id="demo"> Aufgabe 4</button></li>
+            <li><button type="button" onclick="aufgabe()"><input type="text" id="demo"> Aufgabe 5</button></li>
+        </ul>
+        <h2>Deutsch</h2>
+        <ul>
+            <li><button type="button" onclick="myFrage()"><input type="text" id="momo">Frage 1</button></li>
+            <li><button type="button" onclick="myFrage()"><input type="text" id="$">Frage 2</button></li>
+            <li><button type="button" onclick="myFrage()"><input type="text" id="§">Frage 3</button></li>
+            <li><button type="button" onclick="myFrage()"><input type="text" id="&">Frage 4</button></li>
+            <li><button type="button" onclick="myFrage()"><input type="text" id="nemo">Frage 5</button></li>
+        </ul>
 </body>
