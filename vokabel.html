@@ -1,25 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <script>
-        function aufgabe() {
-            var x =document.getElementById("demo").value;
-                   document.getElementById("demo").innerHTML = x;
+
+        var vokabelListe = [
+        { nr: "vokabelNr1", de:"Lager", en:"camp"},
+         {de:"selten", en:"rare"},
+         {de:"John", en:"Doe"},
+         {de:"John", en:"Doe"},
+         {de:"John", en:"Doe"},
+         {de:"John", en:"Doe"},
+         {de:"John", en:"Doe"},
+         {de:"John", en:"Doe"},
+         {de:"John", en:"Doe"},
+         {de:"John", en:"Doe10"},
+         {de:"John", en:"Doe11"},
+         {de:"John", en:"Doe12"},
+         {de:"John", en:"Doe"},
+         {de:"John", en:"Doe"},
+         {de:"John", en:"Doe"},
+         {de:"John", en:"Doe"},
+         {de:"John", en:"Doe"},
+         {de:"John", en:"Doe"},
+         {de:"John", en:"Doe"},
+         {de:"John", en:"Doe"},
+         {de:"John", en:"Doe"}
+        ];
+
+        function myFrage (start) {
+
+            var fieldNr=1;
+            var vokabelNr=0;
+            while (fieldNr<5) {
+
+                fillMyFrage ("f"+fieldNr, vokabelListe[vokabelNr].de);
+                vokabelNr++;
+                fieldNr++;
+
+            }
+      }
+
+        
+        function fillMyFrage (field,en) {
+            var y=document.getElementById(field).value=en;
+            document.getElementById(field).innerHTML = y;                    
         }
-    </script>
-    <script>
-        function myFrage () {
-            var x=document.getElementById("momo").value="rare";
-                  document.getElementById("momo").innerHTML = x;
-            var y=document.getElementById("$").value="camp";
-                  document.getElementById("$").innerHTML=y;
-            var z=document.getElementById("§").value="shock wave";
-                  document.getElementById("§").innerHTML= z;
-            var node=document.getElementById("&").value="lie";
-                  document.getElementById("&").innerHTML= c;
-            var c=document.getElementById("nemo").value="bug";
-                  document.getElementById("nemo").innerHTML= demo;                     
+
+        function aufgabeCheck(aufgabeNr)
+        {
+            // Checke Eingabe gegen richtigen wert. Wenn richtg, dann GRÜN, sonst ROT
+
+            // Hole Benutzereingabe für Feld aufgabeNr
+            var fieldName="a" + aufgabeNr;
+            var userInput = document.getElementById(fieldName).value;
+           // var vokabel =de;
+            //de.appendChild(en)
+
+            // Hole En für Vokabel vokabelNr
+            var vokabel = vokabelListe[aufgabeNr-1].en;
+
+            // Vergleiche! Wenn falsch, dann ROT
+    
+        if (userInput == vokabel) {
+               alert ("RICHTIG!!!! YIPPI");
+          } else {
+              alert ("OCH NÖ, FALSCH");
+          }
         }
+
     </script>
     <style>
         div {
@@ -72,18 +121,18 @@
         <h1>Vokabeln-Trainer</h1>
         <h2>Englisch</h2>
         <ul>
-            <li><button type="button" onclick="aufgabe()"><input type="text" id="demo"> Aufgabe 1</button></li>
-            <li><button type="button" onclick="aufgabe()"><input type="text" id="demo"> Aufgabe 2</button></li>
-            <li><button type="button" onclick="aufgabe()"><input type="text" id="demo"> Aufgabe 3</button></li>
-            <li><button type="button" onclick="aufgabe()"><input type="text" id="demo"> Aufgabe 4</button></li>
-            <li><button type="button" onclick="aufgabe()"><input type="text" id="demo"> Aufgabe 5</button></li>
+            <li><input type="text" id="a1"> Aufgabe 1</button></li><button type="button" onclick="aufgabeCheck(1)">Check</button>
+            <li><input type="text" id="a2"> Aufgabe 2</button></li><button type="button" onclick="aufgabeCheck(2)">Check</button>
+            <li><input type="text" id="a3"> Aufgabe 3</button></li><button type="button" onclick="aufgabeCheck(3)">Check</button>
+            <li><input type="text" id="a4"> Aufgabe 4</button></li><button type="button" onclick="aufgabeCheck(4)">Check</button>
+            <li><input type="text" id="a5"> Aufgabe 5</button></li><button type="button" onclick="aufgabeCheck(4)">Check</button>
         </ul>
         <h2>Deutsch</h2>
         <ul>
-            <li><button type="button" onclick="myFrage()"><input type="text" id="momo">Frage 1</button></li>
-            <li><button type="button" onclick="myFrage()"><input type="text" id="$">Frage 2</button></li>
-            <li><button type="button" onclick="myFrage()"><input type="text" id="§">Frage 3</button></li>
-            <li><button type="button" onclick="myFrage()"><input type="text" id="&">Frage 4</button></li>
-            <li><button type="button" onclick="myFrage()"><input type="text" id="nemo">Frage 5</button></li>
+            <li><input type="text" id="f1">Frage 1</button></li><button type="button" onclick="myFrage()">c</button>
+            <li><input type="text" id="f2">Frage 2</button></li><button type="button" onclick="myFrage()">c</button>
+            <li><input type="text" id="f3">frage 3</button></li><button type="button" onclick="myFrage()">c</button>
+            <li><input type="text" id="f4"> Frage 4</button></li><button type="button" onclick="myFrage()">c</button>
+            <li><input type="text" id="f5">Frage 5</button></li><button type="button" onclick="myFrage()">c</button>
         </ul>
 </body>
