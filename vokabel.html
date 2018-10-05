@@ -5,34 +5,38 @@
     <script>
 
         var vokabelListe = [
-        { nr: "vokabelNr1", de:"Lager", en:"camp"},
+         {de:"Lager", en:"camp"},
          {de:"selten", en:"rare"},
-         {de:"John", en:"Doe"},
-         {de:"John", en:"Doe"},
-         {de:"John", en:"Doe"},
-         {de:"John", en:"Doe"},
-         {de:"John", en:"Doe"},
-         {de:"John", en:"Doe"},
-         {de:"John", en:"Doe"},
-         {de:"John", en:"Doe10"},
-         {de:"John", en:"Doe11"},
-         {de:"John", en:"Doe12"},
-         {de:"John", en:"Doe"},
-         {de:"John", en:"Doe"},
-         {de:"John", en:"Doe"},
-         {de:"John", en:"Doe"},
-         {de:"John", en:"Doe"},
-         {de:"John", en:"Doe"},
-         {de:"John", en:"Doe"},
-         {de:"John", en:"Doe"},
-         {de:"John", en:"Doe"}
+         {de:"Bürger", en:"citizen"},
+         {de:"Verbot", en:"ban"},
+         {de:"allergisch", en:"alllergic"},
+         {de:"Stich", en:"sting"},
+         {de:"Fahrzeug", en:"vehcile"},
+         {de:"Schatten", en:"shade"},
+         {de:"Hitze", en:"heat"},
+         {de:"zufolge", en:"acccording to"},
+         {de:"Leiden", en:"suffer"},
+         {de:"Vorsicht", en:"care"},
+         {de:"Biss", en:"bite"},
+         {de:"breit", en:"wide"},
+         {de:"Sammeln", en:"gather"},
+         {de:"Krankheit", en:"Disease"},
+         {de:"Fehler", en:"bug"},
+         {de:"Kolonie", en:"colony"},
+         {de:"Vor etwas stehen", en:"face something"},
+         {de:"Liste", en:"list"},
+         {de:"Regelmäßig", en:"regular"},
+         {de:"Streifen", en:"stripe"},
+         {de:"Panik" , en:"panic"}
         ];
+
+
 
         function myFrage (start) {
 
             var fieldNr=1;
             var vokabelNr=0;
-            while (fieldNr<5) {
+            while (fieldNr<11) {
 
                 fillMyFrage ("f"+fieldNr, vokabelListe[vokabelNr].de);
                 vokabelNr++;
@@ -47,6 +51,14 @@
             document.getElementById(field).innerHTML = y;                    
         }
 
+        function aufgabeCheckAll()
+        {
+            aufgabeCheck(1);
+            aufgabeCheck(2);
+            aufgabeCheck(3);
+            aufgabeCheck(4);
+            aufgabeCheck(5);
+        }
         function aufgabeCheck(aufgabeNr)
         {
             // Checke Eingabe gegen richtigen wert. Wenn richtg, dann GRÜN, sonst ROT
@@ -63,17 +75,32 @@
             // Vergleiche! Wenn falsch, dann ROT
     
         if (userInput == vokabel) {
-               alert ("RICHTIG!!!! YIPPI");
-          } else {
-              alert ("OCH NÖ, FALSCH");
+
+            //alert ("YIPPPI")
+
+             document.getElementById(fieldName).style.backgroundColor = 'green';
+            
+               // Feld mit rotem Hintergrund (css STYLE ; background-color: red)
+          } 
+          else {
+             // alert("OCH NÖ, FALSCH")
+
+               document.getElementById(fieldName).style.backgroundColor = 'red';
           }
         }
 
+
     </script>
     <style>
+
+        input {
+            background-color: yellow;
+            color: blue;
+
+        }
         div {
-            background-image  : linear-gradient(yellow,black);
-            width: 100%;height: 20%;
+            background-image  : linear-gradient(yellow,black,yellow);
+            width: 100%;height: auto;
             border            : 2px solid black;
             color             : black
         }
@@ -84,7 +111,7 @@
             left    : 10px    ;
             top     : 100px   ;
             color   : blue  ;
-            height  :100% 
+            height  :100%
 
         }
 
@@ -94,7 +121,7 @@
             left    : 110px       ;
             top     : 100px       ;
             color   : blue      ;
-            height  :100% 
+            height  :auto
         }
         .header {
             text-align: center;
@@ -121,18 +148,34 @@
         <h1>Vokabeln-Trainer</h1>
         <h2>Englisch</h2>
         <ul>
-            <li><input type="text" id="a1"> Aufgabe 1</button></li><button type="button" onclick="aufgabeCheck(1)">Check</button>
-            <li><input type="text" id="a2"> Aufgabe 2</button></li><button type="button" onclick="aufgabeCheck(2)">Check</button>
-            <li><input type="text" id="a3"> Aufgabe 3</button></li><button type="button" onclick="aufgabeCheck(3)">Check</button>
-            <li><input type="text" id="a4"> Aufgabe 4</button></li><button type="button" onclick="aufgabeCheck(4)">Check</button>
-            <li><input type="text" id="a5"> Aufgabe 5</button></li><button type="button" onclick="aufgabeCheck(4)">Check</button>
-        </ul>
+            <li><input type="text" id="a1"> Aufgabe 1</li>
+            <li><input type="text" id="a2"> Aufgabe 2</li>
+            <li><input type="text" id="a3"> Aufgabe 3</li>
+            <li><input type="text" id="a4"> Aufgabe 4</li>
+            <li><input type="text" id="a5"> Aufgabe 5</li>
+            <li><input type="text" id="a6"> Aufgabe 6</li>
+            <li><input type="text" id="a7"> Aufgabe 7</li>
+            <li><input type="text" id="a8"> Aufgabe 8</li>
+            <li><input type="text" id="a9"> Aufgabe 9</li>
+            <li><input type="text" id="a10">Aufgabe 10</li><button type="button" onclick="aufgabeCheckAll()">Check All !</button>
+        </ul>0
         <h2>Deutsch</h2>
         <ul>
-            <li><input type="text" id="f1">Frage 1</button></li><button type="button" onclick="myFrage()">c</button>
-            <li><input type="text" id="f2">Frage 2</button></li><button type="button" onclick="myFrage()">c</button>
-            <li><input type="text" id="f3">frage 3</button></li><button type="button" onclick="myFrage()">c</button>
-            <li><input type="text" id="f4"> Frage 4</button></li><button type="button" onclick="myFrage()">c</button>
-            <li><input type="text" id="f5">Frage 5</button></li><button type="button" onclick="myFrage()">c</button>
+            
+            <li><input type="text" id="f1"></li>
+            <li><input type="text" id="f2"></li>
+            <li><input type="text" id="f3"></li>
+            <li><input type="text" id="f4"></li>
+            <li><input type="text" id="f5"></li>
+            <li><input type="text" id="f6"></li>
+            <li><input type="text" id="f7"></li>
+            <li><input type="text" id="f8"></li>
+            <li><input type="text" id="f9"></li>
+            <li><input type="text" id="f10"></li>
+            <button type="button" onclick="myFrage()">alle fragen</button>
         </ul>
+
+        <script>
+        myFrage();
+        </script>
 </body>
