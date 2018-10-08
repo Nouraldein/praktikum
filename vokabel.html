@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <script>
 
         var vokabelListe = [
@@ -9,12 +8,12 @@
          {de:"selten", en:"rare"},
          {de:"Bürger", en:"citizen"},
          {de:"Verbot", en:"ban"},
-         {de:"allergisch", en:"alllergic"},
+         {de:"allergisch", en:"allergic"},
          {de:"Stich", en:"sting"},
-         {de:"Fahrzeug", en:"vehcile"},
-         {de:"Schatten", en:"shade"},
+         {de:"Fahrzeug", en:"vehicle"},
+         {de:"Schatten", en:"shadow"},
          {de:"Hitze", en:"heat"},
-         {de:"zufolge", en:"acccording to"},
+         {de:"zufolge", en:"according to"},
          {de:"Leiden", en:"suffer"},
          {de:"Vorsicht", en:"care"},
          {de:"Biss", en:"bite"},
@@ -29,9 +28,6 @@
          {de:"Streifen", en:"stripe"},
          {de:"Panik" , en:"panic"}
         ];
-
-
-
         function myFrage (start) {
 
             var fieldNr=1;
@@ -53,12 +49,15 @@
 
         function aufgabeCheckAll()
         {
-            aufgabeCheck(1);
-            aufgabeCheck(2);
-            aufgabeCheck(3);
-            aufgabeCheck(4);
-            aufgabeCheck(5);
+            var aufgabeNr=1;
+            var fieldName=0;
+            while (aufgabeNr<11) {
+                aufgabeCheck(aufgabeNr,vokabelListe[fieldName].en);
+                fieldName++;
+                aufgabeNr++;
+            }
         }
+
         function aufgabeCheck(aufgabeNr)
         {
             // Checke Eingabe gegen richtigen wert. Wenn richtg, dann GRÜN, sonst ROT
@@ -94,12 +93,13 @@
     <style>
 
         input {
-            background-color: yellow;
+            background-color: rgb(252, 252, 252);
             color: blue;
+            font-size: 20px
 
         }
         div {
-            background-image  : linear-gradient(yellow,black,yellow);
+            background-image  : linear-gradient(yellow,rgb(179, 255, 0));
             width: 100%;height: auto;
             border            : 2px solid black;
             color             : black
@@ -129,7 +129,8 @@
         }
         li{
             width           : 200px   ;
-            padding         :10px;         
+            padding         :10px;      
+            font-size: 20px   
         }
         h1 {
             text-align: center;
@@ -138,6 +139,19 @@
         h2 {
             font-size: 35px
         }
+        table {
+            width: 100%;
+            height: 100%
+        }
+        table, th, td {
+    border: 5px solid black;
+    border-bottom-left-radius: 50px;
+    border-collapse: collapse;
+    color: rgb(0, 33, 221);
+    font-size: 20px}
+       th{
+           font-size: 40px;
+       }
     </style>
 </head>
 <body>
@@ -146,36 +160,73 @@
     </ul></div>
     <div class="aufgaben">
         <h1>Vokabeln-Trainer</h1>
-        <h2>Englisch</h2>
-        <ul>
-            <li><input type="text" id="a1"> Aufgabe 1</li>
-            <li><input type="text" id="a2"> Aufgabe 2</li>
-            <li><input type="text" id="a3"> Aufgabe 3</li>
-            <li><input type="text" id="a4"> Aufgabe 4</li>
-            <li><input type="text" id="a5"> Aufgabe 5</li>
-            <li><input type="text" id="a6"> Aufgabe 6</li>
-            <li><input type="text" id="a7"> Aufgabe 7</li>
-            <li><input type="text" id="a8"> Aufgabe 8</li>
-            <li><input type="text" id="a9"> Aufgabe 9</li>
-            <li><input type="text" id="a10">Aufgabe 10</li><button type="button" onclick="aufgabeCheckAll()">Check All !</button>
-        </ul>0
-        <h2>Deutsch</h2>
-        <ul>
+        <table>
+            <tr>
+                <th>Deutsch</th>
+                
+                <th>Englisch</th>
+                
+            </tr>
+        <tr>
+            <td><input type="text" id="f1"></td>
+            <td><input type="text" id="a1"> Aufgabe 1</td>
+        </tr>
+        <tr>    
+            <td><input type="text" id="f2"></td>
+            <td><input type="text" id="a2"> Aufgabe 2</td>
+        </tr>  
+        <tr> 
+            <td><input type="text" id="f3"></td>
+            <td><input type="text" id="a3"> Aufgabe 3</td>
+        </tr>
+        <tr>
+                <td><input type="text" id="f4"></td>
+                <td><input type="text" id="a4"> Aufgabe 4</td>
+        </tr>
+        <tr>
+                <td><input type="text" id="f5"></td>
+                <td><input type="text" id="a5"> Aufgabe 5</td>
+        </tr>
+        <tr>
+                <td><input type="text" id="f6"></td>
+                <td><input type="text" id="a6"> Aufgabe 6</td>
+        </tr>
+        <tr>
+                <td><input type="text" id="f7"></td>
+                <td><input type="text" id="a7"> Aufgabe 7</td>
+        </tr>
+        <tr>
+                <td><input type="text" id="f8"></td>
+                <td><input type="text" id="a8"> Aufgabe 8</td>
+        </tr>
+        <tr>
+                <td><input type="text" id="f9"></td>
+                <td><input type="text" id="a9"> Aufgabe 9</td>
+        </tr>
             
-            <li><input type="text" id="f1"></li>
-            <li><input type="text" id="f2"></li>
-            <li><input type="text" id="f3"></li>
-            <li><input type="text" id="f4"></li>
-            <li><input type="text" id="f5"></li>
-            <li><input type="text" id="f6"></li>
-            <li><input type="text" id="f7"></li>
-            <li><input type="text" id="f8"></li>
-            <li><input type="text" id="f9"></li>
-            <li><input type="text" id="f10"></li>
-            <button type="button" onclick="myFrage()">alle fragen</button>
-        </ul>
-
+        <tr>  
+            <td><input type="text" id="f10"></td>
+            <td><input type="text" id="a10">Aufgabe 10</td>
+        </tr>  
+        </table>
         <script>
-        myFrage();
-        </script>
+        function clearTimeout(){
+    var countTimeDown  = Time(180000).getTime(Time);
+    //Time calculations for muinutes and seconds
+    var minutes =Math.floor((1000*60*60)/(1000*60));
+    var seconds =Math.floor((1000 * 60) / (1000));
+    //output
+    document.getElementById("demo").innerHTML= minutes + "m " + seconds + "s ";
+    //if property
+    if (distance<0){
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "Ende";
+    }
+}
+</script>
+        <button type="button" onclick="aufgabeCheckAll()">Check All !</button>
+        <p id="demo">Du hast noch ...</p>
+<script>
+myFrage();
+</script>
 </body>
