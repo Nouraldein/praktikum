@@ -75,15 +75,9 @@
     
         if (userInput == vokabel) {
 
-            //alert ("YIPPPI")
-
              document.getElementById(fieldName).style.backgroundColor = 'green';
-            
-               // Feld mit rotem Hintergrund (css STYLE ; background-color: red)
           } 
           else {
-             // alert("OCH NÖ, FALSCH")
-
                document.getElementById(fieldName).style.backgroundColor = 'red';
           }
         }
@@ -210,22 +204,24 @@
         </tr>  
         </table>
         <script>
-        function clearTimeout(){
-    var countTimeDown  = Time(180000).getTime(Time);
-    //Time calculations for muinutes and seconds
-    var minutes =Math.floor((1000*60*60)/(1000*60));
-    var seconds =Math.floor((1000 * 60) / (1000));
-    //output
-    document.getElementById("demo").innerHTML= minutes + "m " + seconds + "s ";
-    //if property
-    if (distance<0){
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "Ende";
-    }
-}
+         var resttime=30;
+
+        function countdown(){
+            var time=30;
+            display = time;
+            
+            while (resttime>0){
+            display ();
+            resttime--;
+            time--;
+            }
+        }
+        function display(){
+            document.getElementById("time").innerHTML=resttime;
+        }
 </script>
         <button type="button" onclick="aufgabeCheckAll()">Check All !</button>
-        <p id="demo">Du hast noch ...</p>
+        <p id="time"><button onclick="display()">display</button></p>
 <script>
 myFrage();
 </script>
