@@ -1,89 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
 
-        var vokabelListe = [
-         {de:"Lager", en:"camp"},
-         {de:"selten", en:"rare"},
-         {de:"Bürger", en:"citizen"},
-         {de:"Verbot", en:"ban"},
-         {de:"allergisch", en:"allergic"},
-         {de:"Stich", en:"sting"},
-         {de:"Fahrzeug", en:"vehicle"},
-         {de:"Schatten", en:"shadow"},
-         {de:"Hitze", en:"heat"},
-         {de:"zufolge", en:"according to"},
-         {de:"Leiden", en:"suffer"},
-         {de:"Vorsicht", en:"care"},
-         {de:"Biss", en:"bite"},
-         {de:"breit", en:"wide"},
-         {de:"Sammeln", en:"gather"},
-         {de:"Krankheit", en:"Disease"},
-         {de:"Fehler", en:"bug"},
-         {de:"Kolonie", en:"colony"},
-         {de:"Vor etwas stehen", en:"face something"},
-         {de:"Liste", en:"list"},
-         {de:"Regelmäßig", en:"regular"},
-         {de:"Streifen", en:"stripe"},
-         {de:"Panik" , en:"panic"}
-        ];
-        function myFrage (start) {
-
-            var fieldNr=1;
-            var vokabelNr=0;
-            while (fieldNr<11) {
-
-                fillMyFrage ("f"+fieldNr, vokabelListe[vokabelNr].de);
-                vokabelNr++;
-                fieldNr++;
-
-            }
-      }
-
-        
-        function fillMyFrage (field,en) {
-            var y=document.getElementById(field).value=en;
-            document.getElementById(field).innerHTML = y;                    
-        }
-
-        function aufgabeCheckAll()
-        {
-            var aufgabeNr=1;
-            var fieldName=0;
-            while (aufgabeNr<11) {
-                aufgabeCheck(aufgabeNr,vokabelListe[fieldName].en);
-                fieldName++;
-                aufgabeNr++;
-            }
-        }
-
-        function aufgabeCheck(aufgabeNr)
-        {
-            // Checke Eingabe gegen richtigen wert. Wenn richtg, dann GRÜN, sonst ROT
-
-            // Hole Benutzereingabe für Feld aufgabeNr
-            var fieldName="a" + aufgabeNr;
-            var userInput = document.getElementById(fieldName).value;
-           // var vokabel =de;
-            //de.appendChild(en)
-
-            // Hole En für Vokabel vokabelNr
-            var vokabel = vokabelListe[aufgabeNr-1].en;
-
-            // Vergleiche! Wenn falsch, dann ROT
-    
-        if (userInput == vokabel) {
-
-             document.getElementById(fieldName).style.backgroundColor = 'green';
-          } 
-          else {
-               document.getElementById(fieldName).style.backgroundColor = 'red';
-          }
-        }
-
-
-    </script>
     <style>
 
         input {
@@ -100,12 +18,12 @@
         }
 
         .nav {
-            width   : 100px   ;
+            width   : 8%  ;
             position: absolute;
             left    : 10px    ;
             top     : 100px   ;
             color   : blue  ;
-            height  :100%
+            height  :auto
 
         }
 
@@ -118,6 +36,7 @@
             height  :auto
         }
         .header {
+            width: 100%;
             text-align: center;
             color     : blue;        
         }
@@ -161,17 +80,17 @@
                 <th>Englisch</th>
                 
             </tr>
-        <tr>
-            <td><input type="text" id="f1"></td>
-            <td><input type="text" id="a1"> Aufgabe 1</td>
+                        <td><input type="text" id="f1"></td>
+                <td><input type="text" id="a1"> Aufgabe 1</td>
         </tr>
         <tr>    
-            <td><input type="text" id="f2"></td>
-            <td><input type="text" id="a2"> Aufgabe 2</td>
+      <tr>
+          <td><input type="text" id="f2"></td>
+                <td><input type="text" id="a2"> Aufgabe 2</td>
         </tr>  
         <tr> 
-            <td><input type="text" id="f3"></td>
-            <td><input type="text" id="a3"> Aufgabe 3</td>
+                <td><input type="text" id="f3"></td>
+                <td><input type="text" id="a3"> Aufgabe 3</td>
         </tr>
         <tr>
                 <td><input type="text" id="f4"></td>
@@ -199,30 +118,142 @@
         </tr>
             
         <tr>  
-            <td><input type="text" id="f10"></td>
-            <td><input type="text" id="a10">Aufgabe 10</td>
+                <td><input type="text" id="f10"></td>
+                <td><input type="text" id="a10">Aufgabe 10</td>
         </tr>  
-        </table>
-        <script>
-         var resttime=30;
 
-        function countdown(){
-            var time=30;
-            display = time;
+        </table>
+
+        <button type="button" onclick="aufgabeCheckAll()">Check All !</button>
+        <button type="button" onclick="Neustart()"> Restart !</button>
+        <p id="timer"></p>
+        <p id="timerElementId"></p>
+
+        <script>
+
+                var vokabelListe = [
+                 {de:"Lager", en:"camp"},
+                 {de:"selten", en:"rare"},
+                 {de:"Bürger", en:"citizen"},
+                 {de:"Verbot", en:"ban"},
+                 {de:"allergisch", en:"allergic"},
+                 {de:"Stich", en:"sting"},
+                 {de:"Fahrzeug", en:"vehicle"},
+                 {de:"Schatten", en:"shadow"},
+                 {de:"Hitze", en:"heat"},
+                 {de:"Leiden", en:"suffer"},
+                 {de:"zufolge", en:"according to"},
+                 {de:"Vorsicht", en:"care"},
+                 {de:"Biss", en:"bite"},
+                 {de:"breit", en:"wide"},
+                 {de:"Sammeln", en:"gather"},
+                 {de:"Krankheit", en:"Disease"},
+                 {de:"Fehler", en:"bug"},
+                 {de:"Kolonie", en:"colony"},
+                 {de:"Vor etwas stehen", en:"face something"},
+                 {de:"Liste", en:"list"},
+                 {de:"Regelmäßig", en:"regular"},
+                 {de:"Streifen", en:"stripe"},
+                 {de:"Panik" , en:"panic"}
+                ];
+            function initPage (start) {
+    
+                var fieldNr=1;
+                var vokabelNr=0;
+                while (fieldNr<11) {
+    
+                    fillMyFrage ("f"+fieldNr, vokabelListe[vokabelNr].de);
+                    vokabelNr++;
+                    fieldNr++;
+    
+                }
+
+                resetAll();
+                countDown(5,"timer");
+            }
+    
             
-            while (resttime>0){
-            display ();
-            resttime--;
-            time--;
+            function fillMyFrage (field,en) {
+                var y=document.getElementById(field).value=en;
+                document.getElementById(field).innerHTML = y;                    
+            }
+    
+            function aufgabeCheckAll()
+            {
+                var aufgabeNr=1;
+                var fieldName=0;
+                while (aufgabeNr<11) {
+                    aufgabeCheck(aufgabeNr,vokabelListe[fieldName].en);
+                    fieldName++;
+                    aufgabeNr++;
+                }
+            }
+
+        function aufgabeCheck(aufgabeNr)
+        {
+            var fieldName="a" + aufgabeNr;
+            var userInput = document.getElementById(fieldName).value;
+            var vokabel = vokabelListe[aufgabeNr-1].en;
+             if (userInput == vokabel) {
+
+                document.getElementById(fieldName).style.backgroundColor = 'green';
+            } 
+            else {
+                document.getElementById(fieldName).style.backgroundColor = 'red';
             }
         }
-        function display(){
-            document.getElementById("time").innerHTML=resttime;
+
+            function resetAll()
+            {
+                var aufgabeNr=1;
+                var fieldName=0;
+                while (aufgabeNr<11) {
+                    aufgabeReset(aufgabeNr);
+                    fieldName++;
+                    aufgabeNr++;
+                }
+            }
+
+        function aufgabeReset(aufgabeNr)
+        {
+            var fieldName="a" + aufgabeNr;
+            var userInput = document.getElementById(fieldName).value;
+            var vokabel = vokabelListe[aufgabeNr-1].en;
+   
+                document.getElementById(fieldName).style.backgroundColor = 'white';
+            
         }
+
+
+            function Neustart(){
+
+                initPage();
+
+
+
+            }
+
+
+
+        function countDown(resttime, timerElementId){
+            var timerElement=document.getElementById(timerElementId);
+            timerElement.innerHTML="Du hast noch "+resttime+" Sekunden";
+            if (resttime<1) {
+                timerElement.innerHTML='Zeit abgelaufen';
+                aufgabeCheckAll();
+            } else {
+                resttime--;
+                setTimeout('countDown('+resttime+',"'+timerElementId+'")',1000);
+            }
+        }
+
+
+        initPage();
+
 </script>
-        <button type="button" onclick="aufgabeCheckAll()">Check All !</button>
-        <p id="time"><button onclick="display()">display</button></p>
-<script>
-myFrage();
-</script>
+
+
+
+
 </body>
+</html>
