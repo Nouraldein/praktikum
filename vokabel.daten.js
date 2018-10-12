@@ -1,3 +1,5 @@
+
+
 var vokabelListe = [
     {de:"Lager", en:"camp"},
     {de:"selten", en:"rare"},

@@ -13,7 +13,7 @@ function initPage (start) {
    }
 
    resetAll();
-   countDown(20,"timer");
+   countDown(40,"timer");
 }
 
 

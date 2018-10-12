@@ -1,0 +1,32 @@
+div.relative{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 20px
+}
+
+div.absolute{
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    left: 100px;
+    bottom: 100px;
+    border: 10px solid rgb(0, 0, 0);
+}
+div.animation{
+    animation: myFirst 2s 10;
+    animation-direction: alternate; 
+    width: 200px;
+    height: 200px;
+    background: red;
+    position: relative;
+}
+
+@keyframes myFirst {
+    0%   {background: red; left: 0px; top: 0px;}
+    45%  {background: rgb(255, 123, 0); left: 1500px; top: 0px;}
+    50%  {background: rgb(238, 255, 0); left: 1500px; top: 680px;}
+    55%  {background: green; left: 00px; top: 680px; width:200px}
+    100% {background: rgb(0, 17, 255); left: 0px; top: 0px; width:500px}
+    }
+
