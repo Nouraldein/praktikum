@@ -18,15 +18,15 @@ div.animation{
     animation-direction: alternate; 
     width: 200px;
     height: 200px;
-    background: red;
+    xbackground: red;
     position: relative;
 }
 
 @keyframes myFirst {
-    0%   {background: red; left: 0px; top: 0px;}
-    45%  {background: rgb(255, 123, 0); left: 1500px; top: 0px;}
-    50%  {background: rgb(238, 255, 0); left: 1500px; top: 680px;}
-    55%  {background: green; left: 00px; top: 680px; width:200px}
-    100% {background: rgb(0, 17, 255); left: 0px; top: 0px; width:500px}
+    0%   {xbackground: red; left: 0px; top: 0px;}
+    45%  {xbackground: rgb(255, 123, 0); left: 1500px; top: 0px;}
+    50%  {xbackground: rgb(238, 255, 0); left: 1500px; top: 680px;}
+    55%  {xbackground: green; left: 00px; top: 680px; width:200px}
+    100% {xbackground: rgb(0, 17, 255); left: 0px; top: 0px; }
     }
 
